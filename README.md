@@ -10,6 +10,6 @@ Generate migration file ```atlas migrate diff --env gorm``` <br>
 Check migration status ```atlas migrate status --url "mysql://username:password@:port/dbname"``` <br>
 Apply migration ```atlas migrate apply --url "mysql://username:password@:port/dbname"``` <br>
 
-## Other usefull commands
+## Other useful commands
 To fix checksum: ```atlas migrate hash``` <br>
 More info https://atlasgo.io/versioned/apply
