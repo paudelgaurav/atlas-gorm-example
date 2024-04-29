@@ -5,11 +5,11 @@
 
 
 Generate migration file
-``` atlas migrate diff --env gorm ```
+```atlas migrate diff --env gorm```
 
 Check migration status
-``` atlas migrate status --url "mysql://username:password@:port/dbname" ```
+```atlas migrate status --url "mysql://username:password@:port/dbname"```
 
 Apply migration
 
-``` atlas migrate apply --url "mysql://username:password@:port/dbname"
+```atlas migrate apply --url "mysql://username:password@:port/dbname"```
