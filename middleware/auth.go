@@ -4,12 +4,11 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/paudelgaurav/gin-api-permissions/database"
-	"github.com/paudelgaurav/gin-api-permissions/models"
-	"github.com/paudelgaurav/gin-api-permissions/utils"
+	"github.com/paudelgaurav/atlas-gorm-example/database"
+	"github.com/paudelgaurav/atlas-gorm-example/models"
 )
 
-func BasicAuthPermission(permission string) gin.HandlerFunc {
+func BasicAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// Get the Basic Authentication credentials from the request
 		username, password, hasAuth := c.Request.BasicAuth()
@@ -33,11 +32,7 @@ func BasicAuthPermission(permission string) gin.HandlerFunc {
 			c.Abort()
 			return
 		}
-		if !utils.Exists(permission, user.Permissions) {
-			c.JSON(http.StatusForbidden, gin.H{"error": "permission denied"})
-			c.Abort()
-			return
-		}
+
 		// If all checks pass, set the user ID in the context for future use
 		c.Set("userID", user.ID)
 		c.Next()

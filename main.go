@@ -5,10 +5,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/paudelgaurav/gin-api-permissions/controller"
-	"github.com/paudelgaurav/gin-api-permissions/database"
-	"github.com/paudelgaurav/gin-api-permissions/middleware"
-	"github.com/paudelgaurav/gin-api-permissions/models"
+	"github.com/paudelgaurav/atlas-gorm-example/controller"
+	"github.com/paudelgaurav/atlas-gorm-example/database"
+	"github.com/paudelgaurav/atlas-gorm-example/models"
 )
 
 func main() {
@@ -35,8 +34,8 @@ func loadDatabase() {
 func serveApplication() {
 	r := gin.Default()
 	r.GET("/ping", controller.Ping)
-	r.POST("/user", middleware.BasicAuthPermission("can_create_users"), controller.CreateUser)
-	r.GET("/users", middleware.BasicAuthPermission("can_list_users"), controller.GetUsers)
+	r.POST("/users", controller.CreateUser)
+	r.GET("/users", controller.GetUsers)
 
 	r.Run()
 }
