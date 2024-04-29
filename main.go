@@ -29,7 +29,6 @@ func loadDatabase() {
 
 func serveApplication() {
 	r := gin.Default()
-	r.GET("/ping", controller.Ping)
 	r.POST("/users", controller.CreateUser)
 	r.GET("/users", controller.GetUsers)
 
