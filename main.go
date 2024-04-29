@@ -7,7 +7,6 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/paudelgaurav/atlas-gorm-example/controller"
 	"github.com/paudelgaurav/atlas-gorm-example/database"
-	"github.com/paudelgaurav/atlas-gorm-example/models"
 )
 
 func main() {
@@ -25,10 +24,7 @@ func loadEnv() {
 
 func loadDatabase() {
 	database.Connect()
-	log.Print("User Table Migrate")
-	if err := database.DB.AutoMigrate(&models.User{}); err != nil {
-		log.Fatal("problem while migrating user table")
-	}
+
 }
 
 func serveApplication() {
