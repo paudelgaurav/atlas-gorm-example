@@ -1,6 +1,6 @@
 # GORM Migration Versioning with Atlas
 
-This repository simplifies the process of managing database migrations using GORM and Atlas, offering tools to generate, apply, and track database migrations effectively.
+This repository demonstrate the process of managing database migrations using GORM and Atlas, offering tools to generate, apply, and track database migrations effectively.
 
 ## Prerequisites
 
